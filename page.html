@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>Fake Dashboard
+	<link rel="stylesheet" href="lib/presets/p1.css">
+    <link rel="stylesheet" href="lib/presets/p2.css">
+    <link rel="stylesheet" href="lib/presets/p3.css">
+    <link rel="stylesheet" href="lib/presets/p4.css">
+    <link rel="stylesheet" href="lib/presets/p5.css">
+
+	<style>
+        .p1 circle {
+            filter: url(#dropshadow);
+        }
+
+        .p3 path {
+            filter: url(#inner-shadow)
+        }
+
+        .p6 text {
+          font-size: 12px !important;
+          fill: #57C7B6;
+          font-weight: 300;
+        }
+
+    </style>
+</head>
+<body>
+    
+<ul class = "row">
+	<h1></h1>
+	<input class="preset1" type="range" min="0" max="100"
+       data-width="100" 
+       data-height="100" 
+       data-angleOffset="220"
+       data-angleRange="280"
+	>
+
+	<input class="preset1" type="range" min="0" max="100"
+       data-width="100" 
+       data-height="100" 
+       data-angleOffset="220"
+       data-angleRange="280"
+	>
+
+	<input class="preset1" 
+		type="range" 
+		data-width="150" 
+		data-height="150" 
+		data-angleOffset="270" 
+		data-angleRange="180" 
+		data-labels="test1,test2,test3,test4,text5" />
+</ul>
+
+<script type="text/javascript">
+	new Knob(document.getElementById('preset1'), new Ui.P1());
+</script>
+
+</script>
+
+	<script src="dist/knob-min.js"></script>
+</body>
+</html>
