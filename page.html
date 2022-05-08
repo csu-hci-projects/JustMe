@@ -1,62 +1,88 @@
 <!DOCTYPE html>
 <html>
 <head>Fake Dashboard
-	<link rel="stylesheet" href="lib/presets/p1.css">
-    <link rel="stylesheet" href="lib/presets/p2.css">
-    <link rel="stylesheet" href="lib/presets/p3.css">
-    <link rel="stylesheet" href="lib/presets/p4.css">
-    <link rel="stylesheet" href="lib/presets/p5.css">
-
-	<style>
-        .p1 circle {
-            filter: url(#dropshadow);
-        }
-
-        .p3 path {
-            filter: url(#inner-shadow)
-        }
-
-        .p6 text {
-          font-size: 12px !important;
-          fill: #57C7B6;
-          font-weight: 300;
-        }
-
-    </style>
+	<link rel="stylesheet" href="style.css">
 </head>
+<div class="container">
 <body>
+
+
     
-<ul class = "row">
-	<h1></h1>
-	<input class="preset1" type="range" min="0" max="100"
-       data-width="100" 
-       data-height="100" 
-       data-angleOffset="220"
-       data-angleRange="280"
-	>
+<div class = "volumeSliderContainer">
+    <h1>Volume</h1>
+    <h1 id="volume"></h1>
+	<input type="range" min="0" max="100" value="0" class="slider" id="myRange">
 
-	<input class="preset1" type="range" min="0" max="100"
-       data-width="100" 
-       data-height="100" 
-       data-angleOffset="220"
-       data-angleRange="280"
-	>
+    <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("volume");
+            output.innerHTML = slider.value; // Display the default slider value
+    
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function() {
+            output.innerHTML = this.value;
+    } 
+    </script>
+</div>
 
-	<input class="preset1" 
-		type="range" 
-		data-width="150" 
-		data-height="150" 
-		data-angleOffset="270" 
-		data-angleRange="180" 
-		data-labels="test1,test2,test3,test4,text5" />
+
+
+<ul class = "radioButtons">
+    <button>101.7</button>
+    <button>95.7</button>
+    <button>88.9</button>
+    <button>93.3</button>
+    <button>103.4</button>
+    <button>100.2</button>
+    <button>97.7</button>
 </ul>
 
-<script type="text/javascript">
-	new Knob(document.getElementById('preset1'), new Ui.P1());
-</script>
+<div class="climateControl">
+<form>
+    <select>
+        <option>Off</option>
+        <option>Warm</option>
+        <option>Hot</option>
+    </select>
+</form>
 
-</script>
+<div class="fanControl">
+    <h2 class="fanSpeed"></h2>
+    <button class="counter-minus">-</button>
+    <button class="counter-plus">+</button>
 
-	<script src="dist/knob-min.js"></script>
+    <script>
+    let counterDisplayElem = document.querySelector('.fanSpeed');
+    let counterMinusElem = document.querySelector('.counter-minus');
+    let counterPlusElem = document.querySelector('.counter-plus');
+
+    let count = 0;
+
+    updateDisplay();
+
+    counterPlusElem.addEventListener("click",()=>{
+        if(count < 5) {
+            count++;
+        }
+        updateDisplay();
+    }) ;
+
+    counterMinusElem.addEventListener("click",()=>{
+        if(count > 0) {
+            count--;
+        }
+        updateDisplay();
+    });
+
+    function updateDisplay(){
+        counterDisplayElem.innerHTML = count;
+    };  
+    </script>
+</div>
+
+</div>
+
+
 </body>
+</div>
 </html>
