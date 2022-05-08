@@ -23,7 +23,8 @@
 
 .volumeAndChannel {
   display: flex;
-  flex-direction: row;
+  flex-flow: row;
+  justify-content: space-around;
 }
 
 .radioButtons {
