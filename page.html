@@ -17,7 +17,7 @@
         
         <div id="channelOutput">
         <h4>Channel</h4>
-        <h2 id="channel"></h2>
+        <h2 id="channel">-</h2>
         </div>
     </div>
 	<input type="range" min="0" max="100" value="0" class="slider" id="myRange">
@@ -58,23 +58,27 @@
 
 
 <div class="climateControl">
+    <div id="seatHeaterStuff">
+    <h4>Seat Heater</h4>
         <form>
             <select>
             <option>Off</option>
             <option>Warm</option>
             <option>Hot</option>
             </select>
-    </form>
+        </form>
+    </div>
 
-<div class="fanControl">
-    <h2 class="fanSpeed">Fan Speed</h2>
+<div id="fanControl">
+    <h4>Fan Speed</h4>
+    <h2 class="fanSpeed"></h2>
     <button class="counter-minus">-</button>
     <button class="counter-plus">+</button>
 
     <script>
-    let counterDisplayElem = document.querySelector('.fanSpeed');
-    let counterMinusElem = document.querySelector('.counter-minus');
-    let counterPlusElem = document.querySelector('.counter-plus');
+    let counterDisplayElem = document.querySelector(".fanSpeed");
+    let counterMinusElem = document.querySelector(".counter-minus");
+    let counterPlusElem = document.querySelector(".counter-plus");
 
     let count = 0;
 
@@ -98,6 +102,40 @@
         counterDisplayElem.innerHTML = count;
     };  
     </script>
+</div>
+
+<div id ="temperatureControl">
+    <h4>Temperature</h4>
+    <button class = "tempUp">⋀</button>
+    <h2 class = temperature></h2>
+    <button class = "tempDown">⋁</button>
+
+    <script>
+    let tempDisplayElement = document.querySelector(".temperature");
+    let tempUpElement = document.querySelector(".tempUp");
+    let tempDownElement = document.querySelector(".tempDown");
+
+    let temp = 75;
+
+    updateTempDisplay();
+    
+    tempUpElement.addEventListener("click", ()=>{
+        temp++;
+        updateTempDisplay();
+    })
+
+    tempDownElement.addEventListener("click", ()=>{
+        temp--;
+        updateTempDisplay();
+    })
+
+    function updateTempDisplay() {
+        tempDisplayElement.innerHTML = temp;
+    }
+
+    </script>
+
+    
 </div>
 
 </div>

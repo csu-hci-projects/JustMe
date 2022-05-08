@@ -9,22 +9,24 @@
   align-content: center;
   margin: auto;
   flex-wrap: wrap;
-  justify-content: space-around;
+  
   
 }
 
-
 .climateControl {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
-  width: 50%;
+  border: solid black;
+  width: 30%;
+  padding: 10%;
 }
 
 .volumeAndChannel {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  width: 70%;
 }
 
 .volumeOutput {
