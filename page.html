@@ -7,10 +7,14 @@
 <body>
 
 
-    
+
 <div class = "volumeSliderContainer">
-    <h1>Volume</h1>
-    <h1 id="volume"></h1>
+    <div id="volumeAndChannel">
+    <h4>Volume</h4>
+    <h2 id="volume"></h2>
+    <h4>Channel</h4>
+    <h2 id="channel"></h2>
+    </div>
 	<input type="range" min="0" max="100" value="0" class="slider" id="myRange">
 
     <script>
@@ -21,33 +25,44 @@
         // Update the current slider value (each time you drag the slider handle)
         slider.oninput = function() {
             output.innerHTML = this.value;
-    } 
+        } 
     </script>
+
+    <div id="radioButtons">
+        <ul>
+            <button id="101.7" onclick="updateRadioStation(this.id)">101.7</button>
+            <button id="95.7" onclick="updateRadioStation(this.id)">95.7</button>
+            <button id="88.9" onclick="updateRadioStation(this.id)">88.9</button>
+            <button id="93.3" onclick="updateRadioStation(this.id)">93.3</button>
+            <button id="103.4" onclick="updateRadioStation(this.id)">103.4</button>
+            <button id="100.2" onclick="updateRadioStation(this.id)">100.2</button>
+            <button id="97.7" onclick="updateRadioStation(this.id)">97.7</button>
+        </ul>
+    </div>
+
+    <script>
+        var output = document.getElementById("channel");
+        function updateRadioStation(id) {
+            output.innerHTML = id;
+        }
+    </script>
+
 </div>
 
 
 
-<ul class = "radioButtons">
-    <button>101.7</button>
-    <button>95.7</button>
-    <button>88.9</button>
-    <button>93.3</button>
-    <button>103.4</button>
-    <button>100.2</button>
-    <button>97.7</button>
-</ul>
 
 <div class="climateControl">
-<form>
-    <select>
-        <option>Off</option>
-        <option>Warm</option>
-        <option>Hot</option>
-    </select>
-</form>
+        <form>
+            <select>
+            <option>Off</option>
+            <option>Warm</option>
+            <option>Hot</option>
+            </select>
+    </form>
 
 <div class="fanControl">
-    <h2 class="fanSpeed"></h2>
+    <h2 class="fanSpeed">Fan Speed</h2>
     <button class="counter-minus">-</button>
     <button class="counter-plus">+</button>
 
@@ -81,6 +96,9 @@
 </div>
 
 </div>
+
+
+
 
 
 </body>
