@@ -16,22 +16,29 @@
 
 .climateControl {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-around;
   width: 50%;
 }
 
 .volumeAndChannel {
   display: flex;
-  flex-flow: row;
+  flex-direction: row;
   justify-content: space-around;
 }
 
-.radioButtons {
-  width: 10%;
+.volumeOutput {
+  width: 50%;
 }
 
+.channelOutput {
+  width: 50%;
+}
+
+
 .volumeSliderContainer {
+  display: flex;
+  flex-direction: column;
   width: 30%;
   padding: 2%;
   border: solid black;

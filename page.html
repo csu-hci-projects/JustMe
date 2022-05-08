@@ -10,10 +10,15 @@
 
 <div class = "volumeSliderContainer">
     <div id="volumeAndChannel">
-    <h4>Volume</h4>
-    <h2 id="volume"></h2>
-    <h4>Channel</h4>
-    <h2 id="channel"></h2>
+        <div id="volumeOutput">
+        <h4>Volume</h4>
+        <h2 id="volume"></h2>
+        </div>
+        
+        <div id="channelOutput">
+        <h4>Channel</h4>
+        <h2 id="channel"></h2>
+        </div>
     </div>
 	<input type="range" min="0" max="100" value="0" class="slider" id="myRange">
 
@@ -40,10 +45,10 @@
         </ul>
     </div>
 
-    <script>
-        var output = document.getElementById("channel");
+    <script> 
+        var channelOutput = document.getElementById("channel");
         function updateRadioStation(id) {
-            output.innerHTML = id;
+            channelOutput.innerHTML = id;
         }
     </script>
 
