@@ -1,4 +1,15 @@
 
+body {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.climateControl {
+  display: flex;
+  flex-direction: column;
+}
+
 .outerBox {
   width: 70%;
   border: 10% solid blue;
